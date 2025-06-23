@@ -5,6 +5,7 @@ import com.goran.product_catalog_service.model.view.JsonViewFilter;
 import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.MappedSuperclass;
 import lombok.experimental.SuperBuilder;
 import org.hibernate.annotations.GenericGenerator;
 import lombok.*;
@@ -15,6 +16,7 @@ import lombok.*;
 @NoArgsConstructor
 @SuperBuilder
 @ToString
+@MappedSuperclass
 public class IdSuperclass {
 
     @Id

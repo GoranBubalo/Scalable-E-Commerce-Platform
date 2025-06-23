@@ -11,25 +11,31 @@ import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.Set;
+import java.time.ZonedDateTime;
 
 @Entity
 @Getter
 @Setter
 @SuperBuilder
-@Table(name = "CATEGORY")
+@Table(name = "INVENTORY")
 @Slf4j
 @NoArgsConstructor
 @AllArgsConstructor
-public class Category extends IdSuperclass {
+public class Inventory extends IdSuperclass {
 
-    @Column(name = "NAME", nullable = false)
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "PRODUCT_ID", nullable = false)
+    private Product product;
+
+    @Column(name = "QUANTITY", nullable = false)
     @JsonView(JsonViewFilter.Basic.class)
-    private String name;
+    private Integer quantity;
 
-    @Column(name = "DESCRIPTION")
-    private String description;
+    @Column(name = "WAREHOUSE_LOCATION")
+    @JsonView(JsonViewFilter.Basic.class)
+    private String warehouseLocation;
 
-    @OneToMany(mappedBy = "category", fetch = FetchType.LAZY)
-    private Set<Product> products;
+    @Column(name = "LAST_UPDATE")
+    private ZonedDateTime lastUpdate;
+
 }
