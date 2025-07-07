@@ -7,14 +7,11 @@ import org.mapstruct.Mapper;
 
 import java.util.List;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface ProductMapper  {
 
-    ProductRequestDTO toRequestDTO(Product product);
     ProductResponseDTO toResponseDTO(Product product);
     List<ProductResponseDTO> toResponseDTOList(List<Product> products);
-
     Product toEntity(ProductRequestDTO productRequestDTO);
-    Product toEntity(ProductResponseDTO productResponseDTO);
 
 }

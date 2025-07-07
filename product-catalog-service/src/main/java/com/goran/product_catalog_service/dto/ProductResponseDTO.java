@@ -7,7 +7,6 @@ import java.time.ZonedDateTime;
 
 public class ProductResponseDTO {
 
-    private Long id;
     private String name;
     private String description;
     private double price;
@@ -18,10 +17,6 @@ public class ProductResponseDTO {
 
     private Currency currency;
     private ShippingType shippingType;
-    private ReturnPolicy returnPolicy;
-    private Visibility visibility;
-    private ZonedDateTime createdAt;
-    private ZonedDateTime updatedAt;
 }
 
 
