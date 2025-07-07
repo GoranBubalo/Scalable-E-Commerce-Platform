@@ -5,11 +5,11 @@ import jakarta.validation.constraints.NotNull;
 
 public class InventoryRequestDTO {
 
-    ProductRequestDTO productRequestDTO;
+    private ProductRequestDTO productRequestDTO;
 
     @NotNull(message = "Quantity can't be null")
     private Integer quantity;
 
-    @NotBlank(message = "")
+    @NotBlank(message = "warehouse location cannot be empty ")
     private String warehouseLocation;
 }
