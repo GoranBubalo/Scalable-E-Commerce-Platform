@@ -2,9 +2,6 @@ package com.goran.product_catalog_service.dto;
 
 import com.goran.product_catalog_service.enums.*;
 
-import java.time.ZonedDateTime;
-
-
 public class ProductResponseDTO {
 
     private String name;

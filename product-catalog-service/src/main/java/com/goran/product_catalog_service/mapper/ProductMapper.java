@@ -7,7 +7,7 @@ import org.mapstruct.Mapper;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring")
+@Mapper
 public interface ProductMapper  {
 
     ProductResponseDTO toResponseDTO(Product product);
