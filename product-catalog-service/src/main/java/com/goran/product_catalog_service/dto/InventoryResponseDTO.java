@@ -5,5 +5,4 @@ public class InventoryResponseDTO {
     private ProductResponseDTO productResponseDTO;
     private Integer quantity;
     private String warehouseLocation;
-
 }
